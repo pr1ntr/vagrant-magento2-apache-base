@@ -23,6 +23,11 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 35729, host: 35729
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+
+
+
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -37,7 +42,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.  
-  config.vm.synced_folder "../magento2", "/var/www/magento2", :mount_options => ["dmode=777","fmode=666"]
+  config.vm.synced_folder "../elation-site/app", "/var/www/magento2", :mount_options => ["dmode=777","fmode=666"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -48,7 +53,7 @@ Vagrant.configure(2) do |config|
     #vb.gui = true
   
     # OS + MySQL + Apache
-    vb.memory = 2048
+    vb.memory = 6144
     vb.cpus = 2
   end
   
