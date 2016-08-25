@@ -23,7 +23,7 @@ mysql $MYSQLAUTH -e "CREATE DATABASE magento;"
 sudo add-apt-repository ppa:ondrej/php
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update
-sudo apt-get install -y apache2 php7.0 php7.0-mbstring php7.0-mcrypt php7.0-curl php7.0-mysql php7.0-gd php7.0-intl php7.0-dom php7.0-zip curl git
+sudo apt-get install -y apache2 nodejs php7.0 php7.0-mbstring php7.0-mcrypt php7.0-curl php7.0-mysql php7.0-gd php7.0-intl php7.0-dom php7.0-zip curl git
 
 # Install Composer.
 cd /tmp
@@ -41,7 +41,7 @@ sudo chmod +x /usr/local/bin/composer
 
 
 # Enable PHP 7.0 stuff
-sudo a2ensite 
+sudo a2enmod php7.0
 
 # Enable Apache rewrite module
 sudo a2enmod rewrite
